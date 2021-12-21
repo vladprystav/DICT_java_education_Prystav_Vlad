@@ -28,5 +28,16 @@ public class Chatbot {
             if (a == number) {
                 System.out.println("Done!");}
         }
+        //part 5
+        System.out.println("Let's check your knowledge of French. You need to choose the correct answer to my question.\nQuestion: how is the word BOOK translated into French?");
+        System.out.println("\n1.Книга\n2.Carte\n3.Livre\n4.Pencil");
+        while (true) {
+            int user_answer = scanner.nextInt();
+            if(user_answer==3){
+                System.out.println("Well done, "+your_name+"!\n Develop further the French language! Goodbye, have a nice day!");
+                break;}
+            else {
+                System.out.println("Please, try again!");}
+        }
     }
 }
