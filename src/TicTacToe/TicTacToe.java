@@ -1,10 +1,10 @@
 package TicTacToe;
 import java.util.Scanner;
-
 public class TicTacToe {
     public static void main(String[] args) {
         char[][] setka = new char[5][5];
         int[] numb = new int[2];
+        boolean player = true;
         boolean not_cont = false;
         int win_x = 0, win_o = 0, cont = 0;
         Scanner in = new Scanner(System.in);
@@ -16,13 +16,15 @@ public class TicTacToe {
             setka[e][0] = '|';
             setka[e][4] = '|';
         }
-        System.out.print("Enter cells:");
+
         for (int q = 1; q < 4; q++) {
             for (int w = 1; w < 4; w++) {
-                setka[q][w] = in.next().charAt(0);
+                setka[q][w] = ' ';
             }
         }
-        do {for (int t = 0; t < 5; t++) {
+        do {
+            cont = 0;
+            for (int t = 0; t < 5; t++) {
                 for (int y = 0; y < 5; y++) {
                     System.out.print(setka[t][y]);
                 }
@@ -30,7 +32,7 @@ public class TicTacToe {
             }
             do {
                 not_cont = false;
-                System.out.print("Enter the coordinates");
+                System.out.print("Enter the coordinates: ");
                 for (int o = 0; o < 2; o++) {
                     numb[o] = in.nextInt();
                 }
@@ -38,12 +40,19 @@ public class TicTacToe {
                     System.out.println("Coordinates should be from 1 to 3!");
                     not_cont = true;
                 }
-                if (setka[numb[0]][numb[1]] == 'x' || setka[numb[0]][numb[1]] == 'o') {
+                else if (setka[numb[0]][numb[1]] == 'x' || setka[numb[0]][numb[1]] == 'o') {
                     System.out.println("This cell is occupied! Choose another one!");
                     not_cont = true;
                 }
             } while (not_cont == true);
-            setka[numb[0]][numb[1]] = 'x';
+            if (player == true){
+                setka[numb[0]][numb[1]] = 'x';
+                player = false;
+            }
+            else if (player == false){
+                setka[numb[0]][numb[1]] = 'o';
+                player = true;
+            }
             for (int y = 1; y < 4; y++) {
                 if (((setka[y][1] == setka[y][2]) && setka[y][3] == setka[y][2]) && setka[y][1] == 'x') {
                     win_x++;
@@ -76,12 +85,15 @@ public class TicTacToe {
                 System.out.println("Impossible");
             } else if (win_x > 0) {
                 System.out.println("WIN X");
+                System.exit(0);
             } else if (win_o > 0) {
                 System.out.println("WIN O");
+                System.exit(0);
             } else if (cont > 0) {
                 System.out.println("Game not finished");
             } else {
                 System.out.println("Draw");
+                System.exit(0);
             }
         } while (true);
     }
