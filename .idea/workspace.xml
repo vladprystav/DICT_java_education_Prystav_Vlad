@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf222edb-86f8-4932-a267-7f337943bda3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MatrixProcessing/MatrixProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MatrixProcessing/MatrixProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatrixProcessing/MatrixProcessing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
