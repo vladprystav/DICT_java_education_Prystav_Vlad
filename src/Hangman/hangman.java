@@ -29,7 +29,11 @@ public class hangman {
         }
         letters = correct_word.length();
         char[] word = new char[letters];
-
+        char[] use_letters =new char[50];
+        int cycle;
+        int numb = 0;
+        int numb_for_letter = 0;
+        cycle = 0;
         for (int i = 0; i < correct_word.length(); i++) {
             word[i] = '-';
         }
@@ -39,11 +43,27 @@ public class hangman {
             for (int o = 0; o < letters; o++){
                 if (letter == correct_word.charAt(o)) {
                     word[o] = letter;
+                    numb_for_letter = 1;
                 }
             }
             System.out.println(word);
-            for (int p = 0; p < letters; p++) {
-                if (word[p] == correct_word.charAt(p)) {
+            for (int l = 0; l < 50; l++) {
+                if (letter == use_letters[l]) {
+                    numb++;
+                }
+            }
+            if (numb > 0) {
+                System.out.println("No improvements");
+            }
+            else if (numb_for_letter == 1) {
+                i--;
+            }
+            else {
+                System.out.println("That letter doesn't apper in the word");
+            }
+
+            for (int p = 0; p< letters; p++){
+                if (word[p] == correct_word.charAt(p)){
                     num++;
                 }
             }
@@ -54,8 +74,11 @@ public class hangman {
             else {
                 num = 0;
             }
+            use_letters[cycle] = letter;
+            cycle++;
+            numb = 0;
+            numb_for_letter = 0;
         }
-
             System.out.println("YOU LOST");
         }
     }
