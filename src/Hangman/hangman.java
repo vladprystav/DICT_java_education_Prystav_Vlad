@@ -27,6 +27,14 @@ public class hangman {
         else if (cloose_word == 4){
             correct_word = "kotlin";
         }
+        for (int i = 0; i < correct_word.length(); i++){
+            if (i<2){
+                System.out.print(correct_word.charAt(i));
+            }
+            else {
+                System.out.println("-");
+            }
+        }
         word = in.nextLine();
 
         if (correct_word.equals(word)){
