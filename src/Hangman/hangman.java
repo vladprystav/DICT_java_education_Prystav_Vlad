@@ -2,7 +2,7 @@ package Hangman;
 import  java.util.Scanner;
 import static java.lang.Math.random;
 public class hangman {
-    public static void main (String[] arg){
+    public static void main(String[] args) {
         System.out.println("The game will be available soon");
         char letter;
         String correct_word;
@@ -11,26 +11,24 @@ public class hangman {
         int min;
         int max;
         int letters;
+        boolean start = true;
         int num = 1;
-        min=1;
-        max=4;
-        int choose_word = min +(int)(random()*(max-min+1));
-        if (choose_word==1){
+        min = 1;
+        max = 4;
+        int choose_word = min + (int) (random() * (max - min + 1));
+        if (choose_word == 1) {
             correct_word = "python";
-        }
-        else if (choose_word == 2){
+        } else if (choose_word == 2) {
             correct_word = "java";
-        }
-        else if (choose_word == 3){
+        } else if (choose_word == 3) {
             correct_word = "javascript";
-        }
-        else if (choose_word == 4){
+        } else if (choose_word == 4) {
             correct_word = "kotlin";
         }
         letters = correct_word.length();
         char[] word = new char[letters];
-        char[] use_letters =new char[50];
-        char[] bad_letters = {'Q','W','E','R','T','Y','U','I','O','P','A','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'};
+        char[] use_letters = new char[50];
+        char[] bad_letters = {'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'};
         int cycle;
         int numb = 0;
         int numb_for_letter = 0;
@@ -40,17 +38,17 @@ public class hangman {
             word[i] = '-';
         }
         for (int i = 0; i < 8; i++) {
-            do{
+            do {
                 cont = true;
                 System.out.println("Enter letter:");
                 letter = in.next().charAt(0);
-                for (int k=0; k<bad_letters.length; k++){
-                    if (letter == bad_letters[k]){
+                for (int k = 0; k < bad_letters.length; k++) {
+                    if (letter == bad_letters[k]) {
                         cont = false;
                     }
                 }
             } while (cont == false);
-            for (int o = 0; o < letters; o++){
+            for (int o = 0; o < letters; o++) {
                 if (letter == correct_word.charAt(o)) {
                     word[o] = letter;
                     numb_for_letter = 1;
@@ -64,25 +62,22 @@ public class hangman {
             }
             if (numb > 0) {
                 System.out.println("You've already quessed this letter");
-                i --;
-            }
-            else if (numb_for_letter == 1) {
                 i--;
-            }
-            else {
+            } else if (numb_for_letter == 1) {
+                i--;
+            } else {
                 System.out.println("That letter doesn't apper in the word");
             }
 
-            for (int p = 0; p< letters; p++){
-                if (word[p] == correct_word.charAt(p)){
+            for (int p = 0; p < letters; p++) {
+                if (word[p] == correct_word.charAt(p)) {
                     num++;
                 }
             }
             if (num == letters) {
                 System.out.println("YOU SURVIVED");
                 System.exit(0);
-            }
-            else {
+            } else {
                 num = 0;
             }
             use_letters[cycle] = letter;
@@ -90,7 +85,7 @@ public class hangman {
             numb = 0;
             numb_for_letter = 0;
         }
-            System.out.println("YOU LOST");
-        }
+        System.out.println("YOU LOST");
+    }
     }
 
