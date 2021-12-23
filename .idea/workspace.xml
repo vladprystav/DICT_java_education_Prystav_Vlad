@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45e70b4a-cd93-4dc4-b42f-a4812c630f79" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe2/TicTacToe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe2/TicTacToe2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +27,26 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TicTacToe2">
     <configuration name="CoffeeMachine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoffeeMachine.CoffeeMachine" />
       <module name="pr2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="CoffeeMachine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicTacToe2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TicTacToe2.TicTacToe2" />
+      <module name="pr2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TicTacToe2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -55,6 +69,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TicTacToe2" />
         <item itemvalue="Application.CoffeeMachine" />
       </list>
     </recent_temporary>

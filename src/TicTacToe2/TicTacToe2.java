@@ -15,13 +15,14 @@ public class TicTacToe2 {
             setka[e][0] = '|';
             setka[e][4] = '|';
         }
-        System.out.print("Enter cells:");
+        System.out.print("Enter cells: ");
         for (int q = 1; q < 4; q++) {
             for (int w = 1; w < 4; w++) {
                 setka[q][w] = in.next().charAt(0);
             }
         }
-        do {for (int t = 0; t < 5; t++) {
+        do {
+            for (int t = 0; t < 5; t++) {
                 for (int y = 0; y < 5; y++) {
                     System.out.print(setka[t][y]);
                 }
@@ -29,15 +30,15 @@ public class TicTacToe2 {
             }
             do {
                 not_cont = false;
-                System.out.print("Enter the coordinates");
+                System.out.print("Enter the coordinates: ");
                 for (int o = 0; o < 2; o++) {
                     numb[o] = in.nextInt();
                 }
                 if (numb[0] > 3 || numb[1] > 3) {
-                    System.out.println("Coordinates should be from 1 to 3!");
+                    System.out.println("Coordinates should be from 1 to 3! ");
                     not_cont = true;
                 }
-                if (setka[numb[0]][numb[1]] == 'x' || setka[numb[0]][numb[1]] == 'o') {
+                else if (setka[numb[0]][numb[1]] == 'x' || setka[numb[0]][numb[1]] == 'o') {
                     System.out.println("This cell is occupied! Choose another one!");
                     not_cont = true;
                 }
@@ -49,13 +50,13 @@ public class TicTacToe2 {
                 } else if (((setka[y][1] == setka[y][2]) && setka[y][3] == setka[y][2]) && setka[y][1] == 'o') {
                     win_o++;
                 }
-                if (((setka[y][1] == setka[y][2]) && setka[y][3] == setka[y][2]) && setka[y][1] == 'x') {
+                if (((setka[1][y] == setka[2][y]) && setka[3][y] == setka[2][y]) && setka[1][y] == 'x') {
                     win_x++;
-                } else if (((setka[y][1] == setka[y][2]) && setka[y][3] == setka[y][2]) && setka[y][1] == 'o') {
+                } else if (((setka[1][y] == setka[2][y]) && setka[3][y] == setka[2][y]) && setka[1][y] == 'o') {
                     win_o++;
                 }
                 for (int i = 1; i < 4; i++) {
-                    if (setka[y][i] == '_') {
+                    if (setka[y][i] == ' ') {
                         cont++;
                     }
                 }
@@ -75,13 +76,16 @@ public class TicTacToe2 {
                 System.out.println("Impossible");
             } else if (win_x > 0) {
                 System.out.println("WIN X");
+                System.exit(0);
             } else if (win_o > 0) {
                 System.out.println("WIN O");
+                System.exit(0);
             } else if (cont > 0) {
                 System.out.println("Game not finished");
             } else {
                 System.out.println("Draw");
             }
         } while (true);
+
     }
 }
