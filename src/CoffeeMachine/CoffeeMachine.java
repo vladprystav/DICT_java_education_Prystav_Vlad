@@ -17,13 +17,13 @@ public class CoffeeMachine {
         cups1 = 9;
         money = 550;
         do {
-            System.out.println("The coffe machine has;\n" +
+            System.out.println("The coffee machine has;\n" +
                     water1 + "of water\n" +
                     milk1 + "of milk\n" +
-                    coffee_beans1 + "of coffe beans\n" +
+                    coffee_beans1 + "of coffee beans\n" +
                     cups1 + "of disposable cups\n" +
                     money + "of money\n");
-            System.out.println("What did you do? buy/fill/take");
+            System.out.println("What did you do? buy/fill/remaining/exit");
             tap = in.nextLine();
             if (tap.equals("fill")) {
                 System.out.println("Water +:");
@@ -32,7 +32,7 @@ public class CoffeeMachine {
                 System.out.println("Milk +:");
                 milk2 = in.nextInt();
                 milk1 += milk2;
-                System.out.println("Coffe beans +:");
+                System.out.println("Coffee beans +:");
                 coffee_beans2 = in.nextInt();
                 coffee_beans1 += coffee_beans2;
                 System.out.println("Cups +:");
@@ -66,6 +66,17 @@ public class CoffeeMachine {
                     money += 6;
                     cups1--;
                 }
+            }
+            if ( tap.equals("remaining")){
+                System.out.println("The coffee machine has\n"+
+                        water1+"of water\n"+
+                        milk1+"of milk\n"+
+                        coffee_beans1+"of coffee beans\n"+
+                        cups1+"of disposable cups\n"+
+                        money+"of money\n");
+            }
+            if (tap.equals("exit")){
+                System.exit( 0);
             }
         } while (true);
     }
